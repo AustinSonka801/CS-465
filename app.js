@@ -6,8 +6,6 @@ var logger = require('morgan');
 // include reference to handlebars code
 const hbs = require('hbs');
 
-require('./app_server/database/models/db');
-
 // set up routers
 var indexRouter = require('./app_server/routes/index_router');
 var usersRouter = require('./app_server/routes/users');
@@ -17,7 +15,6 @@ var contactRouter = require('./app_server/routes/contact_router');
 var mealsRouter = require('./app_server/routes/meals_router');
 var newsRouter = require('./app_server/routes/news_router');
 var roomsRouter = require('./app_server/routes/rooms_router');
-const apiRouter = require('./app_server/routes/index');
 
 var app = express();
 
