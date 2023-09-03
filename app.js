@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // include reference to handlebars code
 const hbs = require('hbs');
+require('./app_api/database/db');
 
 // set up routers
 var indexRouter = require('./app_server/routes/index_router');
@@ -15,6 +16,7 @@ var contactRouter = require('./app_server/routes/contact_router');
 var mealsRouter = require('./app_server/routes/meals_router');
 var newsRouter = require('./app_server/routes/news_router');
 var roomsRouter = require('./app_server/routes/rooms_router');
+const apiRouter = require('./app_api/routes/index');
 
 var app = express();
 
@@ -40,6 +42,7 @@ app.use('/contact', contactRouter);
 app.use('/meals', mealsRouter);
 app.use('/news', newsRouter);
 app.use('/rooms', roomsRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
