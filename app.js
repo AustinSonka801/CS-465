@@ -11,6 +11,7 @@ const corsOptions = {
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
 }
 require('./app_api/models/db');
+require('./app_api/config/passport');
 
 // set up routers
 var indexRouter = require('./app_server/routes/index_router');
